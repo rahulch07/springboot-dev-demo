@@ -32,8 +32,6 @@ public class Student {
     }
 
     //define getter/setter methods
-
-
     public int getId() {
         return id;
     }
