@@ -17,20 +17,40 @@ public class JpacruddemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner ->{
-			createStudent(studentDAO);
+//			createStudent(studentDAO);
+//			updateStudent(studentDAO);
+			deleteStudent(studentDAO);
 		};
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		Student stud = studentDAO.findById(3);
+
+		stud.setFirstName("Alex1");
+
+		Student newStud =  studentDAO.updateStudent(stud);
+		System.out.println("Updated Student: "+ newStud);
+	}
+
+	private void deleteStudent(StudentDAO studentDAO){
+		studentDAO.deleteStudent(3);
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
 
+		//create student
 		System.out.println("Generating Student...");
-		Student tempStudent = new Student("Rahul", "Chougule", "chouguler310@gmail.com");
+		Student tempStudent = new Student("Alex", "Doe", "alex@gmail.com");
 
 		System.out.println("saving student...");
 		studentDAO.save(tempStudent);
 
 		System.out.println("Saved students id: " + tempStudent.getId());
 
+		//findById
+		System.out.println("finding student");
+		Student student = studentDAO.findById(tempStudent.getId());
+		System.out.println("Student: " + student);
 
 	}
 
