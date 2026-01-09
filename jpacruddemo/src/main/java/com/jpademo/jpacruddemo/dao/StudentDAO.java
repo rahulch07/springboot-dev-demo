@@ -2,6 +2,8 @@ package com.jpademo.jpacruddemo.dao;
 
 import com.jpademo.jpacruddemo.entity.Student;
 
+import java.util.List;
+
 public interface StudentDAO {
 
     void save(Student theStudent);
@@ -11,4 +13,6 @@ public interface StudentDAO {
     Student updateStudent(Student thStudent);
 
     void deleteStudent(Integer id);
+
+    List<Student> findAll();
 }

@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class JpacruddemoApplication {
 
@@ -19,7 +21,9 @@ public class JpacruddemoApplication {
 		return runner ->{
 //			createStudent(studentDAO);
 //			updateStudent(studentDAO);
-			deleteStudent(studentDAO);
+//			deleteStudent(studentDAO);
+
+			findAll(studentDAO);
 		};
 	}
 
@@ -52,6 +56,11 @@ public class JpacruddemoApplication {
 		Student student = studentDAO.findById(tempStudent.getId());
 		System.out.println("Student: " + student);
 
+	}
+
+	private void findAll(StudentDAO studentDAO){
+		List<Student> lst = studentDAO.findAll();
+		System.out.println("All Students list: "+ lst);
 	}
 
 }
