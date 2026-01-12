@@ -16,16 +16,16 @@ public class JpacruddemoApplication {
 		SpringApplication.run(JpacruddemoApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
-		return runner ->{
-//			createStudent(studentDAO);
-//			updateStudent(studentDAO);
-//			deleteStudent(studentDAO);
-
-			findAll(studentDAO);
-		};
-	}
+//	@Bean
+//	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
+//		return runner ->{
+////			createStudent(studentDAO);
+////			updateStudent(studentDAO);
+////			deleteStudent(studentDAO);
+//
+////			findAll(studentDAO);
+//		};
+//	}
 
 	private void updateStudent(StudentDAO studentDAO) {
 		Student stud = studentDAO.findById(3);
