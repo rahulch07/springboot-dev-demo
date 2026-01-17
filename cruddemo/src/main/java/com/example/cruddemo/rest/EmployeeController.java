@@ -1,6 +1,5 @@
 package com.example.cruddemo.rest;
 
-import com.example.cruddemo.dao.EmployeeDAO;
 import com.example.cruddemo.entity.Employee;
 import com.example.cruddemo.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
@@ -8,7 +7,6 @@ import tools.jackson.databind.json.JsonMapper;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 @RestController
 @RequestMapping("/api")
@@ -62,7 +60,7 @@ public class EmployeeController {
     @PatchMapping("/employees/{id}")
     public Employee updateEmployee(@PathVariable int id, @RequestBody Map<String, Object> patchpayload){
         //find employee by id
-        System.out.println("&&&&&in patch:"+ patchpayload);
+//        System.out.println("&&&&&in patch:"+ patchpayload);
         Employee temp = empl.findById(id);
         if(temp == null){
             throw new RuntimeException("Employee not found with id: "+ id);
