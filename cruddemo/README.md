@@ -1,0 +1,1 @@
+Added users, password and their role. each route will require user to be authenticated(not authorized yet).
