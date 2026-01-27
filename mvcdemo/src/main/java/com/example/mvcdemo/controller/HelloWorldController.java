@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class HelloWorldController {
         return "helloworld";    //view name
     }
 
-    @GetMapping("/processform-v2")
+    @PostMapping("/processform-v2")
     public String processformV2(HttpServletRequest request, Model model){
 
 //        request.getParameterMap().forEach((key, value) ->{
