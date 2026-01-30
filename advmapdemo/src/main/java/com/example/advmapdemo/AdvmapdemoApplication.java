@@ -18,13 +18,22 @@ public class AdvmapdemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(AppDao appDao){
 		return runner -> {
-			this.createInstructor(appDao);
+			// create Instructor
+//			this.createInstructor(appDao);
+
+			//fetch instructor by id
+			this.fetch(appDao);
 		};
+	}
+
+	private void fetch(AppDao appDao) {
+		Instructor temp = appDao.findById(2);
+		System.out.println("Instructor: " + temp);
 	}
 
 	private void createInstructor(AppDao appDao) {
 		//create Instructor
-		Instructor temp = new Instructor("Rahul", "Chougule", "rahul@gmail.com");
+		Instructor temp = new Instructor("Prem", "Chougule", "prem@gmail.com");
 
 		//create instructor_details
 		InstructorDetail temp2 = new InstructorDetail("youtube.com", "coding");

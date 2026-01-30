@@ -4,4 +4,6 @@ import com.example.advmapdemo.entity.Instructor;
 
 public interface AppDao {
     void save(Instructor instructor);
+
+    Instructor findById(int id);
 }
